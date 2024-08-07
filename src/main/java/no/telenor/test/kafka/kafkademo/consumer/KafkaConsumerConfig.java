@@ -1,4 +1,4 @@
-package no.telenor.test.kafka.kafkademo.config;
+package no.telenor.test.kafka.kafkademo.consumer;
 
 import no.telenor.test.kafka.kafkademo.consumer.model.Order;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
@@ -36,10 +36,7 @@ public class KafkaConsumerConfig {
         configProps.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         configProps.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
 
-        JsonDeserializer<Order> orderDeserializer = new JsonDeserializer<>(Order.class);
-        orderDeserializer.ignoreTypeHeaders();
-
-        return new DefaultKafkaConsumerFactory<>(configProps, new StringDeserializer(), orderDeserializer);
+        return new DefaultKafkaConsumerFactory<>(configProps, new StringDeserializer(), new JsonDeserializer<>(Order.class, false));
     }
 
     @Bean("order")

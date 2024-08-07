@@ -1,4 +1,4 @@
-package no.telenor.test.kafka.kafkademo.config;
+package no.telenor.test.kafka.kafkademo.producer;
 
 import no.telenor.test.kafka.kafkademo.producer.model.Order;
 import org.apache.kafka.clients.producer.ProducerConfig;
