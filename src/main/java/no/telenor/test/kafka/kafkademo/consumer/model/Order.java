@@ -11,4 +11,5 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Order {
     private String externalOrderId;
+    private SubB subB;
 }
