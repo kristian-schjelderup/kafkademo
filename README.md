@@ -15,7 +15,15 @@ Install Confluent CLI from here: https://docs.confluent.io/confluent-cli/current
 confluent local kafka start
 ```
 
-Take note of the port used by Kafka broker as it starts up.
+Take note of the port used by Kafka broker as it starts up. The output will be on this form:
+
+```
++-----------------+-------+
+| Kafka REST Port | 8082  |
+| Plaintext Ports | 62082 |
++-----------------+-------+
+```
+
 
 ### 2. Run application
 
